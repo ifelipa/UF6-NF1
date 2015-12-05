@@ -13,7 +13,7 @@ public class MySQLAccess {
 	private Statement statement = null;
 	private ResultSet resultSet = null;
 
-	public void readDataBase() {
+	public void readDataBase() throws Exception {
 		String driver = "com.mysql.jdbc.Driver";
 		try {
 			Class.forName(driver);
@@ -35,10 +35,7 @@ public class MySQLAccess {
 
 	private void writeResultSet(ResultSet resultSet2) throws SQLException {
 		while (resultSet.next()) {
-			// It is possible to get the columns via name
-			// also possible to get the columns via the column number
-			// which starts at 1
-			// e.g. resultSet.getSTring(2);
+		
 			String user = resultSet.getString("myuser");
 			String website = resultSet.getString("webpage");
 			String summary = resultSet.getString("summary");
@@ -49,6 +46,7 @@ public class MySQLAccess {
 			System.out.println("Summary: " + summary);
 			System.out.println("Date: " + date);
 			System.out.println("Comment: " + comment);
+			System.out.println("*************************");
 		}
 	}
 

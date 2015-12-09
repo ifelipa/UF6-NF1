@@ -32,10 +32,10 @@ public class MyFirstPreparedStatement {
 			prStatement.setString(3, pagina);
 			prStatement.setString(4, resum);
 			prStatement.setString(5, comentari);
+			prStatement.execute();
 			
 			
 		} catch (SQLException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			connect.close();

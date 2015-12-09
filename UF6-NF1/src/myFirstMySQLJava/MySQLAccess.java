@@ -35,7 +35,7 @@ public class MySQLAccess {
 
 	private void writeResultSet(ResultSet resultSet2) throws SQLException {
 		while (resultSet.next()) {
-		
+
 			String user = resultSet.getString("myuser");
 			String website = resultSet.getString("webpage");
 			String summary = resultSet.getString("summary");
@@ -62,6 +62,8 @@ public class MySQLAccess {
 				connect.close();
 			}
 		} catch (Exception e) {
+			System.out.println("error");
+			
 		}
 	}
 
